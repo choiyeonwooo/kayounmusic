@@ -825,6 +825,58 @@ font header .navbar-default .navbar-nav li a:hover {
   font-weight: 300;
 }
 
+/* Medium to Small devices (tablets, large phones, 992px and down) */
+@media only screen and (max-width: 992px) {
+  .slider {
+    background: url("../images/slider-bg-mobile.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    padding: 200px 0 280px 0;
+    position: relative;
+  }
+
+  .slider .block {
+    display: flex;
+    flex-direction: column;
+    margin-top: -130px;
+  }
+
+  .slider .block h1 {
+    font-size: 30px;
+  }
+
+  .slider .block p {
+    margin-bottom: 200px;
+    font-size: 16px;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .slider .block h1 {
+    font-size: 26px;
+    letter-spacing: 7px;
+  }
+
+  .slider .block p {
+    font-size: 15px;
+    line-height: 27px;
+  }
+}
+
+/* Large Desktops (1920px and up) */
+@media only screen and (min-width: 1921px) {
+  .slider {
+    background: url("../images/slider-bg-large.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    padding: 200px 0 280px 0;
+    position: relative;
+  }
+}
+
 .call-to-action {
   padding: 70px 0px;
   text-align: center;
