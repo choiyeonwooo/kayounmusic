@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import logoImage from "../assets/images/logo.png";
+import logoImage from "../../assets/images/logo.png";
 
 function Header() {
   return (
@@ -10,7 +10,7 @@ function Header() {
             <nav className="navbar navbar-expand-lg">
               <Container fluid>
                 <div className="navbar-header">
-                  <Navbar.Brand href="#home">
+                  <Navbar.Brand href="/">
                     <img src={logoImage} alt="Logo" />
                   </Navbar.Brand>
                 </div>
@@ -18,30 +18,29 @@ function Header() {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <ul className="nav navbar-nav ms-auto">
                     <li>
-                      <Nav.Link href="#home">Home</Nav.Link>
+                      <Nav.Link href="/">Home</Nav.Link>
                     </li>
                     <li>
-                      <NavDropdown title="About">
-                        <NavDropdown.Item href="#action/3.1">Biography</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.4">Résumé</NavDropdown.Item>
-                      </NavDropdown>
+                      <Nav.Link href="/about">About</Nav.Link>
                     </li>
                     <li>
-                      <Nav.Link href="#link">Film Music</Nav.Link>
+                      <Nav.Link href="/film-music">Film Music</Nav.Link>
                     </li>
                     <li>
-                      <Nav.Link href="#link">Works</Nav.Link>
+                      <Nav.Link href="/works">Works</Nav.Link>
                     </li>
                     <li>
                       <NavDropdown title="Scores">
-                        <NavDropdown.Item href="#action/3.1">
+                        <NavDropdown.Item href="/scores#original">
                           Original Compositions
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.4">Arrangements</NavDropdown.Item>
+                        <NavDropdown.Item href="/scores#arrangements">
+                          Arrangements
+                        </NavDropdown.Item>
                       </NavDropdown>
                     </li>
                     <li>
-                      <Nav.Link href="#link">Contact</Nav.Link>
+                      <Nav.Link href="/contact">Contact</Nav.Link>
                     </li>
                   </ul>
                 </Navbar.Collapse>

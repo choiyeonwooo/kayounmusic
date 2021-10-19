@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <footer className="footer">
@@ -7,18 +9,18 @@ function Footer() {
             <div className="footer-manu">
               <ul>
                 <li>
-                  <a href="#about">About Us</a>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <a href="#contact">Contact us</a>
+                  <Link to="/works">Works</Link>
                 </li>
                 <li>
-                  <a href="#support">Support</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
             <p className="copyright">
-              Copyright 2021 &copy; Developed by{" "}
+              Copyright {new Date().getFullYear()} &copy; Developed by{" "}
               <a href="https://brianmin.com" target="_blank" rel="noreferrer">
                 Brian Min
               </a>

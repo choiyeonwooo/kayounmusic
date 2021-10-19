@@ -1,8 +1,8 @@
 import AboutBanner from "../components/AboutBanner";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Slider from "../components/home/Slider";
 import ParallaxBanner from "../components/ParallaxBanner";
-import Slider from "../components/Slider";
+import Footer from "../components/shared/Footer";
+import Header from "../components/shared/Header";
 
 function Home() {
   return (
