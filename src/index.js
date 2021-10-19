@@ -4,9 +4,12 @@ import { hydrate, render } from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./assets/css/style.css";
 import Loader from "./components/shared/Loader";
+import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 import reportWebVitals from "./reportWebVitals";
 import routes from "./routes";
+
+const COMING_SOON = true;
 
 const App = (
   <BrowserRouter>
@@ -21,11 +24,13 @@ const App = (
   </BrowserRouter>
 );
 
+const AppComingSoon = <ComingSoon />;
+
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
-  hydrate(<React.StrictMode>{App}</React.StrictMode>, rootElement);
+  hydrate(<React.StrictMode>{COMING_SOON ? AppComingSoon : App}</React.StrictMode>, rootElement);
 } else {
-  render(<React.StrictMode>{App}</React.StrictMode>, rootElement);
+  render(<React.StrictMode>{COMING_SOON ? AppComingSoon : App}</React.StrictMode>, rootElement);
 }
 
 // If you want to start measuring performance in your app, pass a function
