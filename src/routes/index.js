@@ -1,17 +1,28 @@
 import { lazy } from "react";
-
 const Home = lazy(() => import("../pages/Home"));
 const About = lazy(() => import("../pages/About"));
+const PageComingSoon = lazy(() => import("../pages/PageComingSoon"));
+const FilmMusic = lazy(() => import("../pages/FilmMusic"));
 
 const routes = [
   {
     path: "/about",
-    name: "About",
     component: About,
   },
   {
+    path: "/works",
+    component: PageComingSoon,
+  },
+  {
+    path: "/film-music",
+    component: FilmMusic,
+  },
+  {
+    path: "/contact",
+    component: PageComingSoon,
+  },
+  {
     path: "/",
-    name: "Home",
     component: Home,
   },
 ];

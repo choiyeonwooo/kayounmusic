@@ -39,7 +39,14 @@ function BiographySection() {
               Orchestra since 2019 after leading Go-Compose workshop with Alison Cox in Antigua and
               Barbuda in July 2019.
             </p>
-            <a href="#d" className="btn btn-small mt-20">
+            <a
+              href="#resume"
+              onClick={(e) => {
+                e.preventDefault();
+                window.alert("Résumé is being prepared.");
+              }}
+              className="btn btn-small mt-20"
+            >
               Download Résumé
             </a>
           </div>
