@@ -18,6 +18,10 @@ const routes = [
     component: FilmMusic,
   },
   {
+    path: "/scores",
+    component: PageComingSoon,
+  },
+  {
     path: "/contact",
     component: PageComingSoon,
   },

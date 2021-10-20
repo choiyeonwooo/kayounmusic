@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 import reportWebVitals from "./reportWebVitals";
 import routes from "./routes";
 
-const COMING_SOON = false;
+const COMING_SOON = true;
 
 const App = (
   <BrowserRouter>
