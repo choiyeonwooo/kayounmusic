@@ -12,12 +12,14 @@ function Portfolio() {
               <div className="row">
                 {!_.isEmpty(filmMusicData) ? (
                   filmMusicData.map((data) => (
-                    <PortfolioItem
-                      key={data.youtubeId}
-                      title={data.title}
-                      description={data.description}
-                      youtubeId={data.youtubeId}
-                    />
+                    <div className="col-md-4 p-3">
+                      <PortfolioItem
+                        key={data.youtubeId}
+                        title={data.title}
+                        description={data.description}
+                        youtubeId={data.youtubeId}
+                      />
+                    </div>
                   ))
                 ) : (
                   <></>

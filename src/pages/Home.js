@@ -1,3 +1,4 @@
+import Showcase from "../components/home/Showcase";
 import Slider from "../components/home/Slider";
 import Footer from "../components/shared/Footer";
 import Header from "../components/shared/Header";
@@ -7,8 +8,7 @@ function Home() {
     <>
       <Header />
       <Slider />
-      {/* <AboutBanner />
-      <ParallaxBanner /> */}
+      <Showcase />
       <Footer />
     </>
   );

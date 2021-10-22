@@ -293,6 +293,12 @@ input[type="tel"]:focus {
   font-weight: 600;
 }
 
+h3.section-title {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 500;
+}
+
 .section-title p {
   font-style: italic;
   color: #666;
