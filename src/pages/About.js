@@ -7,7 +7,7 @@ function About() {
   return (
     <>
       <Header />
-      <TopBanner title="About Ka Youn" />
+      <TopBanner title="About" subtitle="Find out about Ka Youn's background." />
       <BiographySection />
       <Footer />
     </>

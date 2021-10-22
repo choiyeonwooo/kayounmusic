@@ -9,7 +9,7 @@ function FilmMusic() {
       <Header />
       <TopBanner
         title="Film Music"
-        subtitle="Original compositions for various films ranging from short films to video game cutscenes"
+        subtitle="Original compositions for various films ranging from original short films to video game cues"
       />
       <Portfolio />
       <Footer />

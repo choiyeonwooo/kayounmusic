@@ -1,5 +1,6 @@
 import Footer from "../components/shared/Footer";
 import Header from "../components/shared/Header";
+import config from "../config";
 
 function PageComingSoon() {
   return (
@@ -15,34 +16,27 @@ function PageComingSoon() {
                 <div className="social-media-icons mt-20">
                   <ul>
                     <li>
-                      <a href="mailto://kbshana3338@gmail.com" target="_blank" rel="noreferrer">
+                      <a href={`mailto:${config.EMAIL}`} target="_blank" rel="noreferrer">
                         <i className="ion-email"></i>
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="https://www.facebook.com/people/Ka-Youn-Yoo/100004411846598/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <a href={config.FACEBOOK_URL} target="_blank" rel="noreferrer">
                         <i className="ion-social-facebook"></i>
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="https://www.instagram.com/kayoun_yukaris"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <a href={config.INSTAGRAM_URL} target="_blank" rel="noreferrer">
                         <i className="ion-social-instagram"></i>
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="https://www.youtube.com/channel/UCj3OZleY0PqZUU6hoPcv9bA"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <a href={config.SOUNDCLOUD_URL} target="_blank" rel="noreferrer">
+                        <i className="fa fa-soundcloud"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href={config.YOUTUBE_URL} target="_blank" rel="noreferrer">
                         <i className="ion-social-youtube"></i>
                       </a>
                     </li>

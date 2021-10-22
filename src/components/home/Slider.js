@@ -15,8 +15,9 @@ function Slider() {
               </Animated>
               <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true}>
                 <p>
-                  We love the Web and the work we do.We work closely with our clients to deliver{" "}
-                  <br /> the best possible solutions for their needs
+                  A passionate composer and orchestrator grown from a diverse cultural background
+                  <br />
+                  with a particular affection for film music
                 </p>
               </Animated>
             </div>

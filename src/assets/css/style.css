@@ -1,6 +1,8 @@
 /*=== MEDIA QUERY ===*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,100,300,500,700);
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,600);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,500,600);
 @import url(http://fonts.googleapis.com/css?family=Volkhov:400italic);
 body {
   line-height: 1.5;
@@ -312,10 +314,11 @@ input[type="tel"]:focus {
 }
 
 .page-title .block h1 {
+  font-family: "Source Sans Pro", sans-serif;
   position: relative;
   color: #fff;
-  font-weight: 200;
-  letter-spacing: 6px;
+  font-weight: 400;
+  letter-spacing: 1px;
   margin-top: 0;
   text-transform: capitalize;
 }
@@ -812,10 +815,10 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .slider .block h1 {
-  font-weight: 100;
+  font-weight: 700;
   font-size: 45px;
   line-height: 60px;
-  letter-spacing: 10px;
+  letter-spacing: 3px;
   padding-bottom: 15px;
   text-transform: uppercase;
 }
@@ -825,7 +828,7 @@ font header .navbar-default .navbar-nav li a:hover {
   color: #b9b9b9;
   font-size: 18px;
   line-height: 27px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Medium to Small devices (tablets, large phones, 992px and down) */
@@ -1205,6 +1208,13 @@ font header .navbar-default .navbar-nav li a:hover {
   padding-bottom: 35px;
 }
 
+@media (max-width: 750px) {
+  .contact-form {
+    padding-top: 40px;
+    padding-bottom: 55px;
+  }
+}
+
 .contact-form .block .form-group {
   padding-bottom: 15px;
   margin: 0px;
@@ -1228,6 +1238,7 @@ font header .navbar-default .navbar-nav li a:hover {
   border: 1px solid #eef2f6;
   box-shadow: none;
   width: 100%;
+  font-size: 14px;
 }
 
 .contact-form .block button {
@@ -1236,7 +1247,7 @@ font header .navbar-default .navbar-nav li a:hover {
   background: #47424c;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .address-block li {
@@ -1280,6 +1291,13 @@ font header .navbar-default .navbar-nav li a:hover {
 .contact-box {
   padding-top: 35px;
   padding-bottom: 58px;
+}
+
+@media (max-width: 750px) {
+  .contact-box {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
 }
 
 .contact-box .block img {
@@ -2241,6 +2259,12 @@ font header .navbar-default .navbar-nav li a:hover {
 
 .bg-2 {
   background: url("../images/about-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bg-3 {
+  background: url("../images/profile_photos/1.jpg");
   background-size: cover;
   background-attachment: fixed;
 }

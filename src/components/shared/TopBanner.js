@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 function TopBanner({ title, subtitle }) {
   return (
-    <section className="page-title">
+    <section className="page-title bg-3">
       <Container>
         <Row>
           <Col md={12}>
