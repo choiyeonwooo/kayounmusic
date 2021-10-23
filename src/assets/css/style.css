@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Cambay:100,300,400,500,600);
+@import url(https://fonts.googleapis.com/css?family=Rosario:100,300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Volkhov:400italic);
 body {
   line-height: 1.5;
@@ -823,11 +824,11 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .slider .block h1 {
-  font-family: "Cambay", sans-serif;
+  font-family: "Rosario", sans-serif;
   font-weight: 700;
   font-size: 45px;
   line-height: 60px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   padding-bottom: 15px;
   text-transform: uppercase;
 }
@@ -2855,7 +2856,6 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .biography p {
-  /* font-family: "Cambay"; */
   font-family: "Open Sans";
   font-size: 17px;
 }
