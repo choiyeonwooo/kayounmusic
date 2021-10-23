@@ -6,7 +6,7 @@ function BiographySection() {
     <section className="about section">
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="biography col-md-6">
             <h2 className="pb-3">Biography</h2>
             <p>
               Ka Youn Yoo <small>(2000-present)</small> is a composer from South Korea. She is

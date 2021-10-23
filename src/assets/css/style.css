@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,100,300,500,700);
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,500,600);
+@import url(https://fonts.googleapis.com/css?family=Cambay:100,300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Volkhov:400italic);
 body {
   line-height: 1.5;
@@ -312,7 +313,7 @@ h3.section-title {
 }
 
 .page-title {
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .page-title .block {
@@ -326,6 +327,7 @@ h3.section-title {
   font-weight: 400;
   letter-spacing: 1px;
   margin-top: 0;
+  font-size: 40px;
   text-transform: capitalize;
 }
 
@@ -821,6 +823,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .slider .block h1 {
+  font-family: "Cambay", sans-serif;
   font-weight: 700;
   font-size: 45px;
   line-height: 60px;
@@ -844,18 +847,19 @@ font header .navbar-default .navbar-nav li a:hover {
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    padding: 200px 0 280px 0;
+    padding: 250px 0 280px 0;
     position: relative;
   }
 
   .slider .block {
     display: flex;
     flex-direction: column;
-    margin-top: -130px;
+    margin-top: -160px;
   }
 
   .slider .block h1 {
     font-size: 30px;
+    line-height: 50px;
   }
 
   .slider .block p {
@@ -866,9 +870,19 @@ font header .navbar-default .navbar-nav li a:hover {
 
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 600px) {
+  .slider {
+    padding: 170px 0 280px 0;
+  }
+
+  .slider .block {
+    margin-top: -26px;
+    margin-bottom: 80px;
+  }
+
   .slider .block h1 {
-    font-size: 26px;
-    letter-spacing: 2px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 47px;
   }
 
   .slider .block p {
@@ -1050,7 +1064,6 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .portfolio-item:hover .portfolio-hover {
-  visibility: hidden;
   opacity: 0;
 }
 
@@ -1067,7 +1080,6 @@ font header .navbar-default .navbar-nav li a:hover {
   top: 0;
   left: 0;
   background: rgba(60, 55, 55, 0.5);
-  visibility: visible;
   opacity: 1;
   transition: 0.3s ease;
 }
@@ -1894,38 +1906,6 @@ font header .navbar-default .navbar-nav li a:hover {
 .clients-logo img {
   width: auto !important;
   padding: 20px;
-}
-
-.about .block h2 {
-  padding-top: 35px;
-  margin: 0;
-}
-
-.about .block p {
-  padding-top: 20px;
-  line-height: 28px;
-}
-
-.about .block img {
-  width: 100%;
-}
-
-.about .about-img {
-  overflow: hidden;
-}
-
-.about .about-img:hover img {
-  -webkit-transform: scale3D(1.1, 1.1, 1);
-  transform: scale3D(1.1, 1.1, 1);
-}
-
-.about .about-img img {
-  opacity: 0.8;
-  transition: all 0.5s ease-out;
-}
-
-.about .section-title {
-  margin-bottom: 0px;
 }
 
 .instagram-feed a {
@@ -2867,4 +2847,53 @@ font header .navbar-default .navbar-nav li a:hover {
 
 .sound-cloud-works-filter-wrapper button {
   margin-right: 5px;
+}
+@media (max-width: 600px) {
+  .biography {
+    padding: 0 20px 0 20px;
+  }
+}
+
+.biography p {
+  /* font-family: "Cambay"; */
+  font-family: "Open Sans";
+  font-size: 17px;
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding-top: 50px;
+  }
+}
+
+.about .block h2 {
+  padding-top: 35px;
+  margin: 0;
+}
+
+.about .block p {
+  padding-top: 20px;
+  line-height: 28px;
+}
+
+.about .block img {
+  width: 100%;
+}
+
+.about .about-img {
+  overflow: hidden;
+}
+
+.about .about-img:hover img {
+  -webkit-transform: scale3D(1.1, 1.1, 1);
+  transform: scale3D(1.1, 1.1, 1);
+}
+
+.about .about-img img {
+  opacity: 0.8;
+  transition: all 0.5s ease-out;
+}
+
+.about .section-title {
+  margin-bottom: 0px;
 }
