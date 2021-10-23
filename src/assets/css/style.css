@@ -1,8 +1,6 @@
 /*=== MEDIA QUERY ===*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,100,300,500,700);
-@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,600);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Cambay:100,300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Rosario:100,300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Volkhov:400italic);
@@ -322,7 +320,7 @@ h3.section-title {
 }
 
 .page-title .block h1 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Rosario", sans-serif;
   position: relative;
   color: #fff;
   font-weight: 400;
@@ -2361,6 +2359,7 @@ font header .navbar-default .navbar-nav li a:hover {
   margin-top: 10px;
   margin: 25px 0 0;
   text-transform: uppercase;
+  color: #655e7a;
 }
 
 .post .post-title a {
@@ -2838,7 +2837,7 @@ font header .navbar-default .navbar-nav li a:hover {
   text-decoration: none;
 }
 
-.sound-cloud-works-filter-wrapper {
+.category-filter-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2846,9 +2845,10 @@ font header .navbar-default .navbar-nav li a:hover {
   margin-top: 40px;
 }
 
-.sound-cloud-works-filter-wrapper button {
+.category-filter-wrapper button {
   margin-right: 5px;
 }
+
 @media (max-width: 600px) {
   .biography {
     padding: 0 20px 0 20px;
@@ -2856,8 +2856,13 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .biography p {
-  font-family: "Open Sans";
-  font-size: 17px;
+  font-family: "Rosario";
+  font-size: 18px;
+}
+
+.biography h2 {
+  font-family: "Rosario";
+  font-size: 30px;
 }
 
 @media (max-width: 600px) {

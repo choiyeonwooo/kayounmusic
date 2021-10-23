@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import logoImage from "../../assets/images/logo.png";
 
 function Header() {
@@ -30,14 +30,7 @@ function Header() {
                       <Nav.Link href="/works">Works</Nav.Link>
                     </li>
                     <li>
-                      <NavDropdown title="Scores">
-                        <NavDropdown.Item href="/scores#original">
-                          Original Compositions
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/scores#arrangements">
-                          Arrangements
-                        </NavDropdown.Item>
-                      </NavDropdown>
+                      <Nav.Link href="/scores">Scores</Nav.Link>
                     </li>
                     <li>
                       <Nav.Link href="/contact">Contact</Nav.Link>
