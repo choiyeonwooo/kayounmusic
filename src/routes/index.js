@@ -4,6 +4,7 @@ const About = lazy(() => import("../pages/About"));
 const PageComingSoon = lazy(() => import("../pages/PageComingSoon"));
 const FilmMusic = lazy(() => import("../pages/FilmMusic"));
 const Contact = lazy(() => import("../pages/Contact"));
+const Works = lazy(() => import("../pages/Works"));
 
 const routes = [
   {
@@ -12,7 +13,7 @@ const routes = [
   },
   {
     path: "/works",
-    component: PageComingSoon,
+    component: Works,
   },
   {
     path: "/film-music",

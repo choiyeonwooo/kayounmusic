@@ -14,18 +14,18 @@ function ContactDescription() {
                 </li>
                 <li>
                   <i className="ion-ios-email-outline"></i>Email:{" "}
-                  <a href={`mailto:${config.EMAIL}`}>kbshana3338@gmail.com</a>
+                  <a href={`mailto:${config.EMAIL}`}>{config.EMAIL}</a>
                 </li>
               </ul>
               <ul className="social-icons">
                 <li>
-                  <a href={config.FACEBOOK_URL} target="_blank" rel="noreferrer">
-                    <i className="ion-social-facebook-outline"></i>
+                  <a href={config.INSTAGRAM_URL} target="_blank" rel="noreferrer">
+                    <i className="ion-social-instagram-outline"></i>
                   </a>
                 </li>
                 <li>
-                  <a href={config.INSTAGRAM_URL} target="_blank" rel="noreferrer">
-                    <i className="ion-social-instagram-outline"></i>
+                  <a href={config.FACEBOOK_URL} target="_blank" rel="noreferrer">
+                    <i className="ion-social-facebook-outline"></i>
                   </a>
                 </li>
                 <li>

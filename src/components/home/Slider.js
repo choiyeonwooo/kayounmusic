@@ -16,8 +16,7 @@ function Slider() {
               <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true}>
                 <p>
                   A passionate composer and orchestrator grown from a diverse cultural background
-                  <br />
-                  with a particular affection for film music
+                  <br className="d-none d-md-block" /> with a particular affection for film music
                 </p>
               </Animated>
             </div>

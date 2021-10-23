@@ -1072,6 +1072,10 @@ font header .navbar-default .navbar-nav li a:hover {
   transition: 0.3s ease;
 }
 
+.portfolio-hover h5 {
+  font-size: 15px;
+}
+
 .portfolio-content {
   position: absolute;
   left: 0;
@@ -2275,6 +2279,12 @@ font header .navbar-default .navbar-nav li a:hover {
   background-attachment: fixed;
 }
 
+@media screen and (max-width: 1800px) {
+  .bg-3 {
+    background: none;
+  }
+}
+
 .widget {
   margin-bottom: 30px;
   padding-bottom: 35px;
@@ -2828,3 +2838,33 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+.sound-cloud {
+  font-size: 10px;
+  color: #cccccc;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma,
+    sans-serif;
+  font-weight: 100;
+}
+
+.sound-cloud a {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.sound-cloud-works-filter-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.sound-cloud-works-filter-wrapper button {
+  margin-right: 5px;
+}

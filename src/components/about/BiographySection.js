@@ -45,7 +45,7 @@ function BiographySection() {
                 e.preventDefault();
                 window.alert("Résumé is being prepared.");
               }}
-              className="btn btn-small mt-20"
+              className="btn btn-small mt-20 mb-5"
             >
               Download Résumé
             </a>

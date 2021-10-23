@@ -13,7 +13,7 @@ function Showcase() {
         <Row>
           {!_.isEmpty(showcaseData) ? (
             showcaseData.map((data) => (
-              <Col md={4} sm={12}>
+              <Col key={data.youtubeId} md={4} sm={12}>
                 <PortfolioItem
                   key={data.youtubeId}
                   title={data.title}
