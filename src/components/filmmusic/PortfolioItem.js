@@ -1,11 +1,16 @@
 import { Popup } from "@sekmet/react-magnific-popup";
 import React from "react";
+import config from "../../config";
 
 function PortfolioItem({ title, description, youtubeId, img, comingSoon }) {
   return (
     <div className="portfolio-item">
       <img
-        src={img ? "thumbnails/" + img : `https://i3.ytimg.com/vi/${youtubeId}/hqdefault.jpg`}
+        src={
+          img
+            ? config.WEB_DOMAIN + "/thumbnails/" + img
+            : `https://i3.ytimg.com/vi/${youtubeId}/hqdefault.jpg`
+        }
         alt={title}
       />
       {comingSoon ? (
