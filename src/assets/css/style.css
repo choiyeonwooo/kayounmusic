@@ -838,7 +838,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 /* Medium to Small devices (tablets, large phones, 992px and down) */
-@media only screen and (max-width: 992px) {
+@media (max-width: 992px) {
   .slider {
     background: url("../images/slider-bg-mobile.jpg") no-repeat;
     background-size: cover;
@@ -865,7 +865,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .slider .block h1 {
     font-size: 26px;
     letter-spacing: 7px;
@@ -878,7 +878,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 /* Large Desktops (1920px and up) */
-@media only screen and (min-width: 1921px) {
+@media (min-width: 1921px) {
   .slider {
     background: url("../images/slider-bg-large.jpg") no-repeat;
     background-size: cover;
@@ -2279,7 +2279,7 @@ font header .navbar-default .navbar-nav li a:hover {
   background-attachment: fixed;
 }
 
-@media screen and (max-width: 1800px) {
+@media (max-width: 1800px) {
   .bg-3 {
     background: none;
   }

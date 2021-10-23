@@ -4,7 +4,7 @@ import config from "../../config";
 
 function PortfolioItem({ title, description, youtubeId, img, comingSoon }) {
   return (
-    <div className="portfolio-item">
+    <div className="portfolio-item mb-3">
       <img
         src={
           img

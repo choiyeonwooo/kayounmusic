@@ -7,7 +7,7 @@ function Header() {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <nav className="navbar navbar-expand-lg">
+            <Navbar collapseOnSelect expand="md" className="navbar navbar-expand-lg">
               <Container fluid>
                 <div className="navbar-header">
                   <Navbar.Brand href="/">
@@ -45,7 +45,7 @@ function Header() {
                   </ul>
                 </Navbar.Collapse>
               </Container>
-            </nav>
+            </Navbar>
           </div>
         </div>
       </div>
