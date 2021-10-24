@@ -133,7 +133,7 @@ func (client MongoDbClient) GetScores() ([]models.Score, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	cursor, err := client.FilmMusicsCollection.Find(ctx, bson.D{})
+	cursor, err := client.ScoresCollection.Find(ctx, bson.D{})
 	if err != nil {
 		defer cursor.Close(ctx)
 		return scores, err
@@ -161,7 +161,7 @@ func (client MongoDbClient) GetScoreById(id string) (models.Score, error) {
 		return score, err
 	}
 
-	err = client.FilmMusicsCollection.FindOne(ctx, bson.D{{"_id", objectId}}).Decode(&score)
+	err = client.ScoresCollection.FindOne(ctx, bson.D{{"_id", objectId}}).Decode(&score)
 	if err != nil {
 		return score, err
 	}
