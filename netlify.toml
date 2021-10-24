@@ -6,3 +6,8 @@
 [build.environment]
   GO_IMPORT_PATH = "github.com/bymi15/kayounmusic"
   GO111MODULE = "on"
+  
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions"
+  status = 200
