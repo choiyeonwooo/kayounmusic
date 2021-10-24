@@ -82,3 +82,89 @@ func (client MongoDbClient) GetFilmMusicById(id string) (models.FilmMusic, error
 	return filmMusic, nil
 
 }
+
+func (client MongoDbClient) GetWorks() ([]models.Work, error) {
+	var work models.Work
+	var works []models.Work
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	cursor, err := client.WorksCollection.Find(ctx, bson.D{})
+	if err != nil {
+		defer cursor.Close(ctx)
+		return works, err
+	}
+
+	for cursor.Next(ctx) {
+		err := cursor.Decode(&work)
+		if err != nil {
+			return works, err
+		}
+		works = append(works, work)
+	}
+
+	return works, nil
+}
+
+func (client MongoDbClient) GetWorkById(id string) (models.Work, error) {
+	var work models.Work
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	objectId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return work, err
+	}
+
+	err = client.WorksCollection.FindOne(ctx, bson.D{{"_id", objectId}}).Decode(&work)
+	if err != nil {
+		return work, err
+	}
+	return work, nil
+
+}
+
+func (client MongoDbClient) GetScores() ([]models.Score, error) {
+	var score models.Score
+	var scores []models.Score
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	cursor, err := client.FilmMusicsCollection.Find(ctx, bson.D{})
+	if err != nil {
+		defer cursor.Close(ctx)
+		return scores, err
+	}
+
+	for cursor.Next(ctx) {
+		err := cursor.Decode(&score)
+		if err != nil {
+			return scores, err
+		}
+		scores = append(scores, score)
+	}
+
+	return scores, nil
+}
+
+func (client MongoDbClient) GetScoreById(id string) (models.Score, error) {
+	var score models.Score
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	objectId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return score, err
+	}
+
+	err = client.FilmMusicsCollection.FindOne(ctx, bson.D{{"_id", objectId}}).Decode(&score)
+	if err != nil {
+		return score, err
+	}
+	return score, nil
+
+}

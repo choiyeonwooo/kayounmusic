@@ -1,6 +1,6 @@
 package models
 
-type Scores struct {
+type Score struct {
 	Id          string `bson:"_id" json:"id,omitempty"`
 	Title       string `json:"title"`
 	Description string `json:"description"`
