@@ -5,5 +5,5 @@ type Work struct {
 	Title    string `json:"title"`
 	Url      string `json:"url"`
 	Category string `json:"category"`
-	Date     bool   `json:"date"`
+	Date     string `json:"date"`
 }

@@ -6,7 +6,7 @@ type Score struct {
 	Description   string `json:"description"`
 	PreviewFile   string `json:"previewFile"`
 	Category      string `json:"category"`
-	Date          bool   `json:"date"`
+	Date          string `json:"date"`
 	SoundCloudUrl string `json:"soundCloudUrl"`
 	Img           string `json:"img"`
 	YoutubeId     string `json:"youtubeId"`
