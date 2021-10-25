@@ -19,8 +19,13 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 	jsonBody, _ := json.Marshal(filmMusics)
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Headers:    map[string]string{"Content-Type": "application/json"},
-		Body:       string(jsonBody),
+		Headers: map[string]string{
+			"Content-Type":                 "application/json",
+			"Access-Control-Allow-Origin":  "*",
+			"Access-Control-Allow-Headers": "Content-Type",
+			"Access-Control-Allow-Methods": "GET",
+		},
+		Body: string(jsonBody),
 	}, nil
 }
 
