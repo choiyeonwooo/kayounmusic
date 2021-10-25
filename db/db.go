@@ -41,7 +41,6 @@ func InitMongoClient() MongoDbClient {
 }
 
 func (client MongoDbClient) GetFilmMusics() ([]models.FilmMusic, error) {
-	var filmMusic models.FilmMusic
 	var filmMusics []models.FilmMusic
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
@@ -54,6 +53,7 @@ func (client MongoDbClient) GetFilmMusics() ([]models.FilmMusic, error) {
 	}
 
 	for cursor.Next(ctx) {
+		filmMusic := models.NewFilmMusic()
 		err := cursor.Decode(&filmMusic)
 		if err != nil {
 			return filmMusics, err
@@ -65,7 +65,7 @@ func (client MongoDbClient) GetFilmMusics() ([]models.FilmMusic, error) {
 }
 
 func (client MongoDbClient) GetFilmMusicById(id string) (models.FilmMusic, error) {
-	var filmMusic models.FilmMusic
+	filmMusic := models.NewFilmMusic()
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -84,7 +84,6 @@ func (client MongoDbClient) GetFilmMusicById(id string) (models.FilmMusic, error
 }
 
 func (client MongoDbClient) GetWorks() ([]models.Work, error) {
-	var work models.Work
 	var works []models.Work
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
@@ -97,6 +96,7 @@ func (client MongoDbClient) GetWorks() ([]models.Work, error) {
 	}
 
 	for cursor.Next(ctx) {
+		work := models.NewWork()
 		err := cursor.Decode(&work)
 		if err != nil {
 			return works, err
@@ -108,7 +108,7 @@ func (client MongoDbClient) GetWorks() ([]models.Work, error) {
 }
 
 func (client MongoDbClient) GetWorkById(id string) (models.Work, error) {
-	var work models.Work
+	work := models.NewWork()
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -127,7 +127,6 @@ func (client MongoDbClient) GetWorkById(id string) (models.Work, error) {
 }
 
 func (client MongoDbClient) GetScores() ([]models.Score, error) {
-	var score models.Score
 	var scores []models.Score
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
@@ -140,6 +139,7 @@ func (client MongoDbClient) GetScores() ([]models.Score, error) {
 	}
 
 	for cursor.Next(ctx) {
+		score := models.NewScore()
 		err := cursor.Decode(&score)
 		if err != nil {
 			return scores, err
@@ -151,7 +151,7 @@ func (client MongoDbClient) GetScores() ([]models.Score, error) {
 }
 
 func (client MongoDbClient) GetScoreById(id string) (models.Score, error) {
-	var score models.Score
+	score := models.NewScore()
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()

@@ -7,3 +7,13 @@ type FilmMusic struct {
 	Img        string `json:"img"`
 	ComingSoon bool   `json:"comingSoon"`
 }
+
+// Constructor for initialising default values
+func NewFilmMusic() FilmMusic {
+	instance := FilmMusic{}
+	instance.Title = ""
+	instance.YoutubeId = ""
+	instance.Img = ""
+	instance.ComingSoon = false
+	return instance
+}
