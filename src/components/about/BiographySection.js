@@ -40,11 +40,8 @@ function BiographySection() {
               Barbuda in July 2019.
             </p>
             <a
-              href="#resume"
-              onClick={(e) => {
-                e.preventDefault();
-                window.alert("Résumé is being prepared.");
-              }}
+              href="/resume/Ka_Youn_Yoo_Resume.pdf"
+              target="_blank"
               className="btn btn-small mt-20 mb-5"
             >
               Download Résumé
