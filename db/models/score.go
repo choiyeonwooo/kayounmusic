@@ -13,6 +13,7 @@ type Score struct {
 	SoundCloudUrl string `json:"soundCloudUrl"`
 	Img           string `json:"img"`
 	YoutubeId     string `json:"youtubeId"`
+	Rescore       bool   `json:"rescore"`
 }
 
 // Constructor for initialising default values
@@ -27,5 +28,6 @@ func NewScore() Score {
 	instance.SoundCloudUrl = ""
 	instance.Img = ""
 	instance.YoutubeId = ""
+	instance.Rescore = false
 	return instance
 }
