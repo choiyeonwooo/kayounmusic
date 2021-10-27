@@ -7,6 +7,7 @@ type Score struct {
 	Title         string `json:"title"`
 	Description   string `json:"description"`
 	PreviewFile   string `json:"previewFile"`
+	FullFile      string `json:"fullFile"`
 	Category      string `json:"category"`
 	Date          string `json:"date"`
 	SoundCloudUrl string `json:"soundCloudUrl"`
@@ -20,6 +21,7 @@ func NewScore() Score {
 	instance.Title = ""
 	instance.Description = ""
 	instance.PreviewFile = ""
+	instance.FullFile = ""
 	instance.Category = ""
 	instance.Date = time.Now().Format("2006-01-02")
 	instance.SoundCloudUrl = ""
