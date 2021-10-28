@@ -10,6 +10,8 @@ const config = {
   SOUNDCLOUD_URL: "https://soundcloud.com/ka-youn-yoo",
   CONTACT_FORM_URL: "https://formspree.io/f/xayazdjd",
   EMAIL: "kbshana3338@gmail.com",
+  CACHE_EXPIRY_HOURS: 12,
+  CACHE_TOGGLE: ENV === "dev" ? false : true,
 };
 
 export default config;

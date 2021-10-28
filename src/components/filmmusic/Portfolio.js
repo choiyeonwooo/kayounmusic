@@ -1,8 +1,22 @@
 import _ from "lodash";
+import { useCachedFetch } from "../../api/cachedFetchHook";
+import config from "../../config";
 import filmMusicData from "../../data/filmmusic.json";
+import ComponentLoader from "../shared/ComponentLoader";
 import PortfolioItem from "./PortfolioItem";
 
 function Portfolio() {
+  let { loading, data, error } = useCachedFetch(
+    `${config.API_ENDPOINT}/filmmusics`,
+    config.CACHE_TOGGLE
+  );
+
+  if (error) {
+    console.log(error);
+    console.log("Loading static data as fallback...");
+    data = filmMusicData;
+  }
+
   return (
     <section className="portfolio-work">
       <div className="container">
@@ -10,16 +24,17 @@ function Portfolio() {
           <div className="col-md-12">
             <div className="block">
               <div className="row">
-                {!_.isEmpty(filmMusicData) ? (
-                  filmMusicData.map((data) => (
-                    <div key={data.youtubeId} className="col-xl-4 col-md-6 col-sm-12 p-3">
+                {loading ? (
+                  <ComponentLoader />
+                ) : !_.isEmpty(data) ? (
+                  data.map((d) => (
+                    <div key={d.youtubeId} className="col-xl-4 col-md-6 col-sm-12 p-3">
                       <PortfolioItem
-                        key={data.youtubeId}
-                        title={data.title}
-                        description={data.description}
-                        youtubeId={data.youtubeId}
-                        img={_.has(data, "img") ? data.img : null}
-                        comingSoon={_.has(data, "comingSoon") ? data.comingSoon : false}
+                        key={d.youtubeId}
+                        title={d.title}
+                        youtubeId={d.youtubeId}
+                        img={d.img}
+                        comingSoon={d.comingSoon}
                       />
                     </div>
                   ))

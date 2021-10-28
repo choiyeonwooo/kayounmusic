@@ -2,7 +2,7 @@ import { Popup } from "@sekmet/react-magnific-popup";
 import React from "react";
 import config from "../../config";
 
-function PortfolioItem({ title, description, youtubeId, img, comingSoon }) {
+function PortfolioItem({ title, youtubeId, img, comingSoon }) {
   return (
     <div className="portfolio-item mb-3">
       <img
@@ -22,7 +22,6 @@ function PortfolioItem({ title, description, youtubeId, img, comingSoon }) {
               </div>
               <h3>{title}</h3>
               <h5>Coming Soon.</h5>
-              <p>{description}</p>
             </div>
           </div>
         </>
@@ -47,7 +46,6 @@ function PortfolioItem({ title, description, youtubeId, img, comingSoon }) {
                 <i className="icon ion-play"></i>
               </div>
               <h3>{title}</h3>
-              <p>{description}</p>
             </div>
           </div>
         </Popup>

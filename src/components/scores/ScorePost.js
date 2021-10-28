@@ -1,14 +1,15 @@
+import _ from "lodash";
 import moment from "moment";
 import React from "react";
 import { Image } from "react-bootstrap";
 import scoreImg from "../../assets/images/score.jpg";
 
-const ScorePost = React.memo(({ id, title, description, category, date }) => (
+const ScorePost = React.memo(({ id, title, img, category, date, rescore }) => (
   <>
     <div className="post">
       <div className="post-thumb">
         <a href={`/scores/${id}`}>
-          <Image fluid src={scoreImg} alt="" rounded />
+          <Image fluid src={!_.isEmpty(img) ? img : scoreImg} alt="" rounded />
         </a>
       </div>
       <a href={`/scores/${id}`}>
@@ -22,13 +23,12 @@ const ScorePost = React.memo(({ id, title, description, category, date }) => (
           <li>
             <i className="ion-pricetags"></i> {category}
           </li>
+          {rescore && (
+            <li>
+              <i className="fa fa-pencil"></i> Rescore
+            </li>
+          )}
         </ul>
-      </div>
-      <div className="post-content">
-        <p>{description}</p>
-        <a href="blog-single.html" className="btn btn-main">
-          Preview
-        </a>
       </div>
     </div>
   </>

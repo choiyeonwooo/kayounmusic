@@ -115,6 +115,7 @@ input[type="tel"]:focus {
 
 .btn-main,
 .btn-transparent,
+.btn-success,
 .btn-small {
   background: #655e7a;
   color: #fff;
@@ -125,6 +126,10 @@ input[type="tel"]:focus {
   text-transform: uppercase;
   border-radius: 0;
   transition: all 0.2s ease;
+}
+
+.btn-success {
+  background: #708d6d;
 }
 
 .btn-main.btn-icon i,
@@ -140,6 +145,10 @@ input[type="tel"]:focus {
 .btn-small:hover {
   background: #353240;
   color: #fff;
+}
+
+.btn-success:hover {
+  background: #354234;
 }
 
 .btn-solid-border {
@@ -2093,6 +2102,7 @@ font header .navbar-default .navbar-nav li a:hover {
 
 .post-excerpt p {
   margin: 0 0 30px;
+  font-size: 16px;
 }
 
 .post-excerpt blockquote.quote-post {
@@ -2105,6 +2115,37 @@ font header .navbar-default .navbar-nav li a:hover {
   color: #655e7a;
 }
 
+.post-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-buttons i {
+  margin-right: 6px;
+}
+
+.post-buttons .btn {
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+@media (max-width: 765px) {
+  .post-buttons {
+    flex-direction: column;
+  }
+}
+
+.responsive-youtube {
+  width: 100%;
+  height: 385px;
+}
+@media (max-width: 765px) {
+  .responsive-youtube {
+    height: 315px;
+  }
+}
 .single-blog {
   background-color: #fff;
   margin-bottom: 50px;

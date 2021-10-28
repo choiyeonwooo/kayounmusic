@@ -11,8 +11,8 @@ function BiographySection() {
             <p>
               Ka Youn Yoo <small>(2000-present)</small> is a composer from South Korea. She is
               currently studying music composition at King’s College London, having graduated from
-              The Purcell School for Young Musicians in the UK, The Yewon Arts Middle School and
-              studied at The Seoul Arts High School in Korea.
+              The Purcell School for Young Musicians in the UK. She also spent two years at The
+              Seoul Arts High School studying music composition.
             </p>
             <p>
               Ka Youn’s ambition is to express the sound of international music and arts through her
