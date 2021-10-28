@@ -12,6 +12,7 @@ const config = {
   EMAIL: "kbshana3338@gmail.com",
   CACHE_EXPIRY_HOURS: 12,
   CACHE_TOGGLE: ENV === "dev" ? false : true,
+  PRE_RENDERING: navigator.userAgent === "ReactSnap",
 };
 
 export default config;

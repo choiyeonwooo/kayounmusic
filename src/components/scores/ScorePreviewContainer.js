@@ -31,7 +31,7 @@ function ScorePreviewContainer({ id }) {
     <>
       <section className="page-wrapper">
         <Container>
-          {loading ? (
+          {loading || config.PRE_RENDERING ? (
             <ComponentLoader />
           ) : !_.isEmpty(data) ? (
             <Row>

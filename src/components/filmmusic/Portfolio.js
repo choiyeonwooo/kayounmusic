@@ -24,7 +24,7 @@ function Portfolio() {
           <div className="col-md-12">
             <div className="block">
               <div className="row">
-                {loading ? (
+                {loading || config.PRE_RENDERING ? (
                   <ComponentLoader />
                 ) : !_.isEmpty(data) ? (
                   data.map((d) => (

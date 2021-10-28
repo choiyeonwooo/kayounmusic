@@ -31,7 +31,7 @@ function SoundCloudContainer() {
         <CategoryFilter filter={filter} setFilter={setFilter} />
         <Row>
           <FlipMove typeName={null}>
-            {loading ? (
+            {loading || config.PRE_RENDERING ? (
               <ComponentLoader />
             ) : !_.isEmpty(data) ? (
               filteredWorks().map((data) => (
