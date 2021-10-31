@@ -1,0 +1,124 @@
+{{define "works"}}
+<div
+  class="tab-pane fade"
+  id="works"
+  role="tabpanel"
+  aria-labelledby="list-tab"
+>
+  <div class="card">
+    <div class="card-header">
+      <h4>Works</h4>
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-end mb-1">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#workModal"
+          onclick="addWorkModal()"
+        >
+          <i class="fas fa-plus mr-2"></i> Add Work
+        </button>
+      </div>
+      <div
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        id="workModal"
+        aria-labelledby="workModal"
+        aria-hidden="true"
+      >
+        <form class="form" action="/#works" method="POST" role="form" autocomplete="off">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add Work</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input name="title" type="text" class="form-control" id="title">
+                </div>
+                <div class="mb-3">
+                  <label for="url" class="form-label">Soundcloud URL</label>
+                  <input name="url" type="text" class="form-control" id="url">
+                </div>
+                <div class="mb-3">
+                  <label for="category" class="form-label">Category</label>
+                  <select name="category" class="form-control" id="category">
+                    <option value="Orchestral">Orchestral</option>
+                    <option value="World">World</option>
+                    <option value="Chamber">Chamber</option>
+                    <option value="Solo">Solo</option>
+                    <option value="Film">Film</option>
+                    <option value="Arrangement">Arrangement</option>
+                  </select>
+                </div>
+                <input name="type" type="hidden" value="works" />
+                <input name="editId" type="hidden" value="" />
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Soundcloud URL</th>
+              <th scope="col">Category</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{range $i, $w := .Works}}
+            <tr>
+              <th scope="row">{{$i}}</th>
+              <td style="max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{$w.Title}}</td>
+              <td>
+                <a href="{{$w.Url}}" target="_blank" rel="noopener noreferrer">
+                  {{$w.Url}}
+                </a>
+              </td>
+              <td>{{$w.Category}}</td>
+              <td>
+                <a href="#" onclick="editWorkModal({{$w}})" data-toggle="modal" data-target="#workModal"><i class="fas fa-pencil-alt mr-1"></i></a>
+                <a href="/delete/work/{{$w.Id}}" onclick="return confirm('Are you sure?')"><i class="fas fa-trash text-danger"></i></a>
+              </td>
+            </tr>
+            {{end}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function addWorkModal() {
+    $("#workModal input[name=editId]").val("");
+    $("#workModal input[name=title]").val("");
+    $("#workModal input[name=url]").val("");
+    $("#workModal select[name=category]").val("Orchestral");
+    $("#workModal h5[class='modal-title']").html("Add Work");
+  }
+  function editWorkModal(work) {
+    $("#workModal input[name=editId]").val(work.id);
+    $("#workModal input[name=title]").val(work.title);
+    $("#workModal input[name=url]").val(work.url);
+    $("#workModal select[name=category]").val(work.category);
+    $("#workModal h5[class='modal-title']").html("Edit Work");
+  }
+</script>
+{{end}}

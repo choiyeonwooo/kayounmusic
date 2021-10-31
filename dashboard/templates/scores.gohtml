@@ -1,0 +1,178 @@
+{{define "scores"}}
+<div
+  class="tab-pane fade"
+  id="scores"
+  role="tabpanel"
+  aria-labelledby="list-tab"
+>
+  <div class="card">
+    <div class="card-header">
+      <h4>Scores</h4>
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-end mb-1">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#scoreModal"
+          onclick="addScoreModal()"
+        >
+          <i class="fas fa-plus mr-2"></i> Add Score
+        </button>
+      </div>
+      <div
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        id="scoreModal"
+        aria-labelledby="scoreModal"
+        aria-hidden="true"
+      >
+        <form class="form" action="/#scores" method="POST" role="form" autocomplete="off">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add Score</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input name="title" type="text" class="form-control" id="title">
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description</label>
+                  <textarea name="description" type="text" class="form-control" id="description"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="category" class="form-label">Category</label>
+                  <select name="category" class="form-control" id="category">
+                    <option value="Orchestral">Orchestral</option>
+                    <option value="World">World</option>
+                    <option value="Chamber">Chamber</option>
+                    <option value="Solo">Solo</option>
+                    <option value="Film">Film</option>
+                    <option value="Arrangement">Arrangement</option>
+                  </select>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="date" class="form-label">Date</label>
+                    <input name="date" type="text" class="form-control" id="date">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="img" class="form-label">Thumbnail Image</label>
+                    <input name="img" type="text" class="form-control" id="img">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="previewFile" class="form-label">Preview File</label>
+                    <input name="previewFile" type="text" class="form-control" id="previewFile">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="fullFile" class="form-label">Full File</label>
+                    <input name="fullFile" type="text" class="form-control" id="fullFile">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="soundCloudUrl" class="form-label">Soundcloud URL</label>
+                    <input name="soundCloudUrl" type="text" class="form-control" id="soundCloudUrl">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="youtubeUrl" class="form-label">Youtube URL</label>
+                    <input name="youtubeUrl" type="text" class="form-control" id="youtubeUrl">
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <input name="rescore" type="checkbox" class="form-check-input" id="rescore">
+                  <label for="rescore" class="form-check-label">Rescore?</label>
+                </div>
+                <input name="type" type="hidden" value="scores" />
+                <input name="editId" type="hidden" value="" />
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Category</th>
+              <th scope="col">Date</th>
+              <th scope="col">Rescore</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{range $i, $s := .Scores}}
+            <tr>
+              <th scope="row">{{$i}}</th>
+              <td style="max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{$s.Title}}</td>
+              <td style="max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{$s.Description}}</td>
+              <td>{{$s.Category}}</td>
+              <td>{{$s.Date}}</td>
+              <td>
+                {{if $s.Rescore}}
+                  <i class="fas fa-check text-success"></i>
+                {{else}}
+                  <i class="fas fa-times text-secondary"></i>
+                {{end}}
+              </td>
+              <td>
+                <a href="#" onclick="editScoreModal({{$s}})" data-toggle="modal" data-target="#scoreModal"><i class="fas fa-pencil-alt mr-1"></i></a>
+                <a href="/delete/score/{{$s.Id}}" onclick="return confirm('Are you sure?')"><i class="fas fa-trash text-danger"></i></a>
+              </td>
+            </tr>
+            {{end}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function addScoreModal() {
+    $("#scoreModal input[name=editId]").val("");
+    $("#scoreModal input[name=title]").val("");
+    $("#scoreModal textarea[name=description]").val("");
+    $("#scoreModal select[name=category]").val("Orchestral");
+    $("#scoreModal input[name=date]").val("");
+    $("#scoreModal input[name=previewFile]").val("");
+    $("#scoreModal input[name=fullFile]").val("");
+    $("#scoreModal input[name=soundCloudUrl]").val("");
+    $("#scoreModal input[name=youtubeUrl]").val("");
+    $("#scoreModal input[name=img]").val("");
+    $("#scoreModal input[name=rescore]").prop('checked', false);
+    $("#scoreModal h5[class='modal-title']").html("Add Score");
+  }
+  function editScoreModal(score) {
+    $("#scoreModal input[name=editId]").val(score.id);
+    $("#scoreModal input[name=title]").val(score.title);
+    $("#scoreModal textarea[name=description]").val(score.description);    
+    $("#scoreModal select[name=category]").val(score.category);
+    $("#scoreModal input[name=date]").val(score.date);
+    $("#scoreModal input[name=previewFile]").val(score.previewFile);
+    $("#scoreModal input[name=fullFile]").val(score.fullFile);
+    $("#scoreModal input[name=soundCloudUrl]").val(score.soundCloudUrl);
+    $("#scoreModal input[name=youtubeUrl]").val(score.youtubeUrl);
+    $("#scoreModal input[name=img]").val(score.img);
+    $("#scoreModal input[name=rescore]").prop('checked', score.rescore);
+    $("#scoreModal h5[class='modal-title']").html("Edit Score");
+  }
+</script>
+{{end}}

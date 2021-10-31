@@ -1,0 +1,44 @@
+{{define "tabs"}}
+<ul class="nav nav-tabs justify-content-end">
+  <li class="nav-item">
+    <a
+      class="nav-link active"
+      data-toggle="tab"
+      href="#filmmusic"
+      role="tab"
+      aria-controls="filmmusic"
+      aria-selected="true"
+      >Film Music (Youtube)</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      data-toggle="tab"
+      href="#works"
+      role="tab"
+      aria-controls="works"
+      aria-selected="false"
+      >Works (Soundcloud)</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      data-toggle="tab"
+      href="#scores"
+      role="tab"
+      aria-controls="scores"
+      aria-selected="false"
+      >Scores</a
+    >
+  </li>
+</ul>
+<script>
+  $(document).ready(function(){
+    if(window.location.hash != "") {
+      $('.nav-tabs a[href="' + window.location.hash + '"]').tab('show');
+    }
+  });
+</script>
+{{end}}

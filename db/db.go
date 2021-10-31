@@ -83,6 +83,58 @@ func (client MongoDbClient) GetFilmMusicById(id string) (models.FilmMusic, error
 
 }
 
+func (client MongoDbClient) CreateFilmMusic(filmMusic models.FilmMusic) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+	_, err := client.FilmMusicsCollection.InsertOne(ctx, filmMusic)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (client MongoDbClient) UpdateFilmMusic(id string, filmMusic models.FilmMusic) error {
+	objectId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return err
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	var data bson.M
+	bytes, err := bson.Marshal(filmMusic)
+	if err != nil {
+		return err
+	}
+	err = bson.Unmarshal(bytes, &data)
+	if err != nil {
+		return err
+	}
+	_, err = client.FilmMusicsCollection.UpdateOne(
+		ctx,
+		bson.D{{"_id", objectId}},
+		bson.D{{"$set", data}},
+	)
+	return err
+}
+
+func (client MongoDbClient) DeleteFilmMusic(id string) error {
+	objectId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return err
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	_, err = client.FilmMusicsCollection.DeleteOne(ctx, bson.D{{"_id", objectId}})
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func (client MongoDbClient) GetWorks() ([]models.Work, error) {
 	var works []models.Work
 
@@ -126,6 +178,58 @@ func (client MongoDbClient) GetWorkById(id string) (models.Work, error) {
 
 }
 
+func (client MongoDbClient) CreateWork(work models.Work) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+	_, err := client.WorksCollection.InsertOne(ctx, work)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (client MongoDbClient) UpdateWork(id string, work models.Work) error {
+	objectId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return err
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	var data bson.M
+	bytes, err := bson.Marshal(work)
+	if err != nil {
+		return err
+	}
+	err = bson.Unmarshal(bytes, &data)
+	if err != nil {
+		return err
+	}
+	_, err = client.WorksCollection.UpdateOne(
+		ctx,
+		bson.D{{"_id", objectId}},
+		bson.D{{"$set", data}},
+	)
+	return err
+}
+
+func (client MongoDbClient) DeleteWork(id string) error {
+	objectId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return err
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	_, err = client.WorksCollection.DeleteOne(ctx, bson.D{{"_id", objectId}})
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func (client MongoDbClient) GetScores() ([]models.Score, error) {
 	var scores []models.Score
 
@@ -167,4 +271,56 @@ func (client MongoDbClient) GetScoreById(id string) (models.Score, error) {
 	}
 	return score, nil
 
+}
+
+func (client MongoDbClient) CreateScore(score models.Score) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+	_, err := client.ScoresCollection.InsertOne(ctx, score)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (client MongoDbClient) UpdateScore(id string, score models.Score) error {
+	objectId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return err
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	var data bson.M
+	bytes, err := bson.Marshal(score)
+	if err != nil {
+		return err
+	}
+	err = bson.Unmarshal(bytes, &data)
+	if err != nil {
+		return err
+	}
+	_, err = client.ScoresCollection.UpdateOne(
+		ctx,
+		bson.D{{"_id", objectId}},
+		bson.D{{"$set", data}},
+	)
+	return err
+}
+
+func (client MongoDbClient) DeleteScore(id string) error {
+	objectId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return err
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	_, err = client.ScoresCollection.DeleteOne(ctx, bson.D{{"_id", objectId}})
+	if err != nil {
+		return err
+	}
+	return nil
 }
