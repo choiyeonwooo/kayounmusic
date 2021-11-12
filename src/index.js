@@ -16,14 +16,21 @@ const App = (
   <BrowserRouter>
     <Suspense fallback={<Loader />}>
       <Switch>
-        {routes.map((prop, key) => (
-          <Route
-            path={prop.path}
-            component={<GaWrapper>{prop.component}</GaWrapper>}
-            key={key}
-            exact
-          />
-        ))}
+        {routes.map((prop, key) => {
+          const Component = prop.component;
+          return (
+            <Route
+              path={prop.path}
+              render={() => (
+                <GaWrapper>
+                  <Component />
+                </GaWrapper>
+              )}
+              key={key}
+              exact
+            />
+          );
+        })}
         <Route component={NotFound} />
       </Switch>
     </Suspense>
