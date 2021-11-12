@@ -4,6 +4,7 @@ import { hydrate, render } from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./assets/css/style.css";
 import Loader from "./components/shared/Loader";
+import GaWrapper from "./GaWrapper";
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 import reportWebVitals from "./reportWebVitals";
@@ -16,7 +17,12 @@ const App = (
     <Suspense fallback={<Loader />}>
       <Switch>
         {routes.map((prop, key) => (
-          <Route path={prop.path} component={prop.component} key={key} exact />
+          <Route
+            path={prop.path}
+            component={<GaWrapper>{prop.component}</GaWrapper>}
+            key={key}
+            exact
+          />
         ))}
         <Route component={NotFound} />
       </Switch>
