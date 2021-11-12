@@ -1,8 +1,5 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Helmet } from "react-helmet";
-import "react-image-lightbox/style.css";
-import "./assets/styles/Index.scss";
 
 const GaWrapper = ({ children }) => (
   <React.Fragment>
