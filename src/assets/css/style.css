@@ -1008,7 +1008,6 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .feature {
-  background: url("../images/featue-bg.jpg");
   background-position: 50% 94px;
   display: block;
   position: relative;
@@ -2281,7 +2280,6 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .bg-1 {
-  background-image: url("../images/call-to-action-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
