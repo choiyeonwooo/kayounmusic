@@ -900,7 +900,7 @@ font header .navbar-default .navbar-nav li a:hover {
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 600px) {
   .slider {
-    padding: 150px 0 280px 0;
+    padding: 100px 0 280px 0;
   }
 
   .slider .block {
