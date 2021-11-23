@@ -24,7 +24,6 @@ function Footer() {
               <a href="https://brianmin.com" target="_blank" rel="noreferrer">
                 Brian Min
               </a>
-              . All rights reserved.
             </p>
           </div>
         </div>

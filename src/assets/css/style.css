@@ -4,6 +4,13 @@
 @import url(https://fonts.googleapis.com/css?family=Cambay:100,300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Rosario:100,300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Volkhov:400italic);
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
@@ -626,6 +633,10 @@ h3.section-title {
   opacity: 0.8;
 }
 
+.slider {
+  height: calc(100vh - 300px);
+}
+
 .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
   background: #655e7a !important;
@@ -848,7 +859,17 @@ font header .navbar-default .navbar-nav li a:hover {
   font-weight: 400;
 }
 
-/* Medium to Small devices (tablets, large phones, 992px and down) */
+@media (max-width: 1920px) {
+  .slider {
+    background: url("../images/slider-bg-medium.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    padding: 150px 0 280px 0;
+    position: relative;
+  }
+}
+
 @media (max-width: 992px) {
   .slider {
     background: url("../images/slider-bg-mobile.jpg") no-repeat;
@@ -879,7 +900,7 @@ font header .navbar-default .navbar-nav li a:hover {
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 600px) {
   .slider {
-    padding: 170px 0 280px 0;
+    padding: 150px 0 280px 0;
   }
 
   .slider .block {
@@ -906,7 +927,7 @@ font header .navbar-default .navbar-nav li a:hover {
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    padding: 200px 0 280px 0;
+    padding: 300px 0 280px 0;
     position: relative;
   }
 }
@@ -2846,6 +2867,16 @@ font header .navbar-default .navbar-nav li a:hover {
 .footer .footer-manu ul li a {
   display: inline-block;
   color: #494949;
+}
+
+@media (max-width: 992px) {
+  .footer .footer-manu ul li {
+    padding: 0px 10px;
+  }
+
+  .footer .footer-manu ul li a {
+    font-size: 14px;
+  }
 }
 
 .footer .footer-manu ul li a:hover {
