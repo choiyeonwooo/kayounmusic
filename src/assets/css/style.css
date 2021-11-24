@@ -878,6 +878,7 @@ font header .navbar-default .navbar-nav li a:hover {
     background-position: center center;
     padding: 250px 0 280px 0;
     position: relative;
+    height: 700px;
   }
 
   .slider .block {
@@ -901,10 +902,11 @@ font header .navbar-default .navbar-nav li a:hover {
 @media (max-width: 600px) {
   .slider {
     padding: 100px 0 280px 0;
+    height: 700px;
   }
 
   .slider .block {
-    margin-top: -26px;
+    margin-top: -45px;
     margin-bottom: 80px;
   }
 
