@@ -783,8 +783,8 @@ font header .navbar-default .navbar-nav li a:hover {
   text-transform: uppercase;
 }
 
-.navigation .navbar .navbar-nav > li > a:hover,
-.navigation .navbar .navbar-nav > li > a:focus {
+.navigation .navbar .navbar-nav > li > a:not(.navbar-highlight-button):hover,
+.navigation .navbar .navbar-nav > li > a:not(.navbar-highlight-button):focus {
   color: #000;
   background: transparent;
 }
@@ -797,8 +797,8 @@ font header .navbar-default .navbar-nav li a:hover {
   text-transform: uppercase;
 }
 
-.navigation .navbar .navbar-nav > li > div > a:hover,
-.navigation .navbar .navbar-nav > li > div > a:focus {
+.navigation .navbar .navbar-nav > li > div > a:not(.navbar-highlight-button):hover,
+.navigation .navbar .navbar-nav > li > div > a:not(.navbar-highlight-button):focus {
   color: #000;
   background: transparent;
 }
@@ -810,21 +810,40 @@ font header .navbar-default .navbar-nav li a:hover {
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
 }
 
-.navigation .navbar .dropdown-menu a {
+.navigation .navbar .dropdown-menu a:not(.navbar-highlight-button) {
   font-weight: normal;
   color: #808080;
   padding: 10px 20px;
   transition: all 0.3s ease;
 }
 
-.navigation .navbar .dropdown-menu a:hover {
+.navigation .navbar .dropdown-menu a:not(.navbar-highlight-button):hover {
   background: #655e7a;
   color: #fff;
   padding-left: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.navigation .navbar a.navbar-highlight-button {
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: #fff !important;
+  margin-left: 15px;
+  font-weight: 400 !important;
 }
 
 .nav .open > a {
   background: transparent;
+}
+
+@media (max-width: 768px) {
+  .navigation .navbar .navbar-nav {
+    text-align: center;
+  }
+  .navigation .navbar a.navbar-highlight-button {
+    margin-left: 0;
+  }
 }
 
 .slider {
@@ -2973,4 +2992,20 @@ font header .navbar-default .navbar-nav li a:hover {
 
 .about .section-title {
   margin-bottom: 0px;
+}
+
+.brand span {
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.brand span.brandHighlight {
+  font-weight: 800;
+  color: #716988;
+}
+.brand span.brandText {
+  color: #766e8f;
 }

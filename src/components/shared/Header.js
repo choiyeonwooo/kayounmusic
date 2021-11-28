@@ -1,5 +1,4 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import logoImage from "../../assets/images/logo.png";
 
 function Header() {
   return (
@@ -10,8 +9,9 @@ function Header() {
             <Navbar collapseOnSelect expand="md" className="navbar navbar-expand-lg">
               <Container fluid>
                 <div className="navbar-header">
-                  <Navbar.Brand href="/">
-                    <img src={logoImage} alt="Logo" />
+                  <Navbar.Brand className="brand" href="/">
+                    <span className="brandHighlight">Kayoun</span>{" "}
+                    <span className="brandText">Yoo</span>
                   </Navbar.Brand>
                 </div>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,6 +34,15 @@ function Header() {
                     </li>
                     <li>
                       <Nav.Link href="/contact">Contact</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link
+                        href="/resume/Ka_Youn_Yoo_Resume.pdf"
+                        target="_blank"
+                        className="btn btn-small navbar-highlight-button"
+                      >
+                        <i className="ion-android-open" /> View Résumé
+                      </Nav.Link>
                     </li>
                   </ul>
                 </Navbar.Collapse>
