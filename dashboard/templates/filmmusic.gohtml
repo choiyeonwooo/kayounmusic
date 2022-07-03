@@ -57,7 +57,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="order" class="form-label">Order</label>
-                  <input name="order" type="number" class="form-control" id="order" value="1">
+                  <input name="order" type="number" class="form-control" id="order">
                 </div>
                 <input name="type" type="hidden" value="filmMusic" />
                 <input name="editId" type="hidden" value="" />
@@ -123,6 +123,7 @@
     $("#filmMusicModal input[name=youtubeUrl]").val("");
     $("#filmMusicModal input[name=img]").val("");
     $("#filmMusicModal input[name=comingSoon]").prop('checked', false);
+    $("#filmMusicModal input[name=order]").val("");
     $("#filmMusicModal h5[class='modal-title']").html("Add Film Music");
   }
   function editFilmMusicModal(filmMusic) {
@@ -131,6 +132,7 @@
     $("#filmMusicModal input[name=youtubeUrl]").val(filmMusic.youtubeId ? "https://www.youtube.com/watch?v=" + filmMusic.youtubeId : "");
     $("#filmMusicModal input[name=img]").val(filmMusic.img);
     $("#filmMusicModal input[name=comingSoon]").prop('checked', filmMusic.comingSoon);
+    $("#filmMusicModal input[name=order]").val(filmMusic.order || 0);
     $("#filmMusicModal h5[class='modal-title']").html("Edit Film Music");
   }
 </script>

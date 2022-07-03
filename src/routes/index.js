@@ -2,7 +2,8 @@ import { lazy } from "react";
 const Home = lazy(() => import("../pages/Home"));
 const About = lazy(() => import("../pages/About"));
 // const PageComingSoon = lazy(() => import("../pages/PageComingSoon"));
-const FilmMusic = lazy(() => import("../pages/FilmMusic"));
+const Media = lazy(() => import("../pages/Media"));
+const CJ = lazy(() => import("../pages/CJ"));
 const Contact = lazy(() => import("../pages/Contact"));
 const Works = lazy(() => import("../pages/Works"));
 const Scores = lazy(() => import("../pages/Scores"));
@@ -18,8 +19,12 @@ const routes = [
     component: Works,
   },
   {
-    path: "/film-music",
-    component: FilmMusic,
+    path: "/media",
+    component: Media,
+  },
+  {
+    path: "/cj",
+    component: CJ,
   },
   {
     path: "/scores",

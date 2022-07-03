@@ -24,13 +24,16 @@ function Header() {
                       <Nav.Link href="/about">About</Nav.Link>
                     </li>
                     <li>
-                      <Nav.Link href="/film-music">Film Music</Nav.Link>
+                      <Nav.Link href="/media">Media</Nav.Link>
                     </li>
                     <li>
                       <Nav.Link href="/works">Works</Nav.Link>
                     </li>
                     <li>
                       <Nav.Link href="/scores">Scores</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="/cj">CJ 장학금 포트폴리오</Nav.Link>
                     </li>
                     <li>
                       <Nav.Link href="/contact">Contact</Nav.Link>

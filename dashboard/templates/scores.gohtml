@@ -169,7 +169,7 @@
     $("#scoreModal input[name=previewFile]").val(score.previewFile);
     $("#scoreModal input[name=fullFile]").val(score.fullFile);
     $("#scoreModal input[name=soundCloudUrl]").val(score.soundCloudUrl);
-    $("#scoreModal input[name=youtubeUrl]").val(score.youtubeUrl);
+    $("#scoreModal input[name=youtubeUrl]").val(score.youtubeId ? "https://www.youtube.com/watch?v=" + score.youtubeId : "");
     $("#scoreModal input[name=img]").val(score.img);
     $("#scoreModal input[name=rescore]").prop('checked', score.rescore);
     $("#scoreModal h5[class='modal-title']").html("Edit Score");

@@ -1,10 +1,13 @@
-import React from "react";
 import { Button } from "react-bootstrap";
 
-function CategoryFilter({ filter, setFilter }) {
-  const categories = ["All", "Orchestral", "World", "Chamber", "Solo"];
+function CategoryFilter({
+  categories = ["All", "Orchestral", "World", "Chamber", "Solo", "Arrangement"],
+  filter,
+  setFilter,
+  style,
+}) {
   return (
-    <div className="category-filter-wrapper">
+    <div className="category-filter-wrapper" style={style}>
       {categories.map((category) => (
         <Button
           size="sm"

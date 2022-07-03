@@ -23,7 +23,10 @@ function ScoresContainer() {
     data = scoresData;
   }
 
-  const filteredScores = () => (filter === "All" ? data : _.filter(data, ["category", filter]));
+  const filteredScores = () =>
+    filter === "All"
+      ? _.sortBy(data, (obj) => new Date(obj.date)).reverse()
+      : _.sortBy(_.filter(data, ["category", filter]), (obj) => new Date(obj.date)).reverse();
 
   return (
     <>
