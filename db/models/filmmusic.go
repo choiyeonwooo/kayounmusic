@@ -6,6 +6,7 @@ type FilmMusic struct {
 	YoutubeId  string `json:"youtubeId"`
 	Img        string `json:"img"`
 	ComingSoon bool   `json:"comingSoon"`
+	Order      int    `json:"order"`
 }
 
 // Constructor for initialising default values
@@ -15,5 +16,6 @@ func NewFilmMusic() FilmMusic {
 	instance.YoutubeId = ""
 	instance.Img = ""
 	instance.ComingSoon = false
+	instance.Order = 1
 	return instance
 }

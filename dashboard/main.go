@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strconv"
 	"strings"
 	"time"
 
@@ -35,8 +36,8 @@ func main() {
 	http.HandleFunc("/delete/work/", handleDeleteWork)
 	http.HandleFunc("/delete/score/", handleDeleteScore)
 
-	log.Println("Listening on port 3000...")
-	err = http.ListenAndServe(":3000", nil)
+	log.Println("Listening on port 5000...")
+	err = http.ListenAndServe(":5000", nil)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -88,11 +89,13 @@ func handleTemplate(w http.ResponseWriter, r *http.Request) {
 			if r.FormValue("comingSoon") == "on" {
 				comingSoon = true
 			}
+			order, _ := strconv.Atoi(r.FormValue("order"))
 			filmMusic := models.FilmMusic{
 				Title:      r.FormValue("title"),
 				YoutubeId:  parseYoutubeIdFromUrl(r.FormValue("youtubeUrl")),
 				Img:        r.FormValue("img"),
 				ComingSoon: comingSoon,
+				Order:      order,
 			}
 			var err error
 			if editId != "" {
