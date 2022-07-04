@@ -23,9 +23,6 @@ function FilmMusic() {
     <section className="portfolio-work" style={{ paddingBottom: 0 }}>
       <div className="container">
         <div className="row">
-          <h2>Film Music</h2>
-        </div>
-        <div className="row">
           <div className="col-md-12">
             <div className="block">
               <div className="row">

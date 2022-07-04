@@ -23,18 +23,27 @@ function SoundCloudContainer() {
     data = worksData;
   }
 
-  const filteredWorks = () => (filter === "All" ? data : _.filter(data, ["category", filter]));
+  const filteredWorks =
+    filter === "All"
+      ? _.sortBy(data, (obj) => new Date(obj.id)).reverse()
+      : _.sortBy(_.filter(data, ["category", filter]), (obj) => new Date(obj.id)).reverse();
+
+  console.log(filteredWorks);
 
   return (
     <>
       <Container>
-        <CategoryFilter filter={filter} setFilter={setFilter} />
+        <CategoryFilter
+          filter={filter}
+          setFilter={setFilter}
+          categories={["All", "Orchestral", "World", "Chamber", "Solo"]}
+        />
         <Row>
           <FlipMove typeName={null}>
             {loading || config.PRE_RENDERING ? (
               <ComponentLoader />
             ) : !_.isEmpty(data) ? (
-              filteredWorks().map((data) => (
+              filteredWorks.map((data) => (
                 <Col key={data.title} xl={3} lg={4} md={6} sm={12}>
                   <SoundCloudEmbed title={data.title} url={data.url} />
                 </Col>

@@ -6,11 +6,8 @@ function ConcertMusic() {
   const data = concertMusicData;
 
   return (
-    <section className="portfolio-work" style={{ paddingBottom: 0 }}>
+    <section className="portfolio-work" style={{ paddingBottom: 0, paddingTop: 0 }}>
       <div className="container">
-        <div className="row">
-          <h2>Concert Music</h2>
-        </div>
         <div className="row">
           <div className="col-md-12">
             <div className="block">

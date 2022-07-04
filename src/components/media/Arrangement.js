@@ -6,11 +6,8 @@ function Arrangement() {
   const data = arrangementData;
 
   return (
-    <section className="portfolio-work">
+    <section className="portfolio-work" style={{ paddingBottom: 0, paddingTop: 0 }}>
       <div className="container">
-        <div className="row">
-          <h2>Arrangement</h2>
-        </div>
         <div className="row">
           <div className="col-md-12">
             <div className="block">
