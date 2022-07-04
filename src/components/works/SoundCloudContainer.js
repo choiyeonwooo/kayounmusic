@@ -28,8 +28,6 @@ function SoundCloudContainer() {
       ? _.sortBy(data, (obj) => new Date(obj.id)).reverse()
       : _.sortBy(_.filter(data, ["category", filter]), (obj) => new Date(obj.id)).reverse();
 
-  console.log(filteredWorks);
-
   return (
     <>
       <Container>

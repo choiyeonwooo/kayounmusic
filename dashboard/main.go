@@ -95,6 +95,7 @@ func handleTemplate(w http.ResponseWriter, r *http.Request) {
 				YoutubeId:  parseYoutubeIdFromUrl(r.FormValue("youtubeUrl")),
 				Img:        r.FormValue("img"),
 				ComingSoon: comingSoon,
+				Category:   r.FormValue("category"),
 				Order:      order,
 			}
 			var err error

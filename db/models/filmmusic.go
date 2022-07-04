@@ -6,6 +6,7 @@ type FilmMusic struct {
 	YoutubeId  string `json:"youtubeId"`
 	Img        string `json:"img"`
 	ComingSoon bool   `json:"comingSoon"`
+	Category   string `json:"category"`
 	Order      int    `json:"order"`
 }
 
@@ -16,6 +17,7 @@ func NewFilmMusic() FilmMusic {
 	instance.YoutubeId = ""
 	instance.Img = ""
 	instance.ComingSoon = false
+	instance.Category = ""
 	instance.Order = 1
 	return instance
 }

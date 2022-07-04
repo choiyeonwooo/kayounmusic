@@ -59,6 +59,10 @@
                   <label for="order" class="form-label">Order</label>
                   <input name="order" type="number" class="form-control" id="order">
                 </div>
+                <div class="mb-3">
+                  <label for="category" class="form-label">Category</label>
+                  <input name="category" type="text" class="form-control" id="category">
+                </div>
                 <input name="type" type="hidden" value="filmMusic" />
                 <input name="editId" type="hidden" value="" />
               </div>
@@ -82,6 +86,7 @@
               <th scope="col">Thumbnail Image</th>
               <th scope="col">Coming Soon?</th>
               <th scope="col">Order</th>
+              <th scope="col">Category</th>
               <th></th>
             </tr>
           </thead>
@@ -104,6 +109,7 @@
               {{end}}
               </td>
               <td>{{$f.Order}}</td>
+              <td>{{$f.Category}}</td>
               <td>
                 <a href="#" onclick="editFilmMusicModal({{$f}})" data-toggle="modal" data-target="#filmMusicModal"><i class="fas fa-pencil-alt mr-1"></i></a>
                 <a href="/delete/filmmusic/{{$f.Id}}" onclick="return confirm('Are you sure?')"><i class="fas fa-trash text-danger"></i></a>
@@ -124,6 +130,7 @@
     $("#filmMusicModal input[name=img]").val("");
     $("#filmMusicModal input[name=comingSoon]").prop('checked', false);
     $("#filmMusicModal input[name=order]").val("");
+    $("#filmMusicModal input[name=category]").val("");
     $("#filmMusicModal h5[class='modal-title']").html("Add Film Music");
   }
   function editFilmMusicModal(filmMusic) {
@@ -133,6 +140,7 @@
     $("#filmMusicModal input[name=img]").val(filmMusic.img);
     $("#filmMusicModal input[name=comingSoon]").prop('checked', filmMusic.comingSoon);
     $("#filmMusicModal input[name=order]").val(filmMusic.order || 0);
+    $("#filmMusicModal input[name=category]").val(filmMusic.category);
     $("#filmMusicModal h5[class='modal-title']").html("Edit Film Music");
   }
 </script>
