@@ -1,13 +1,13 @@
 import React from "react";
 import CategoryFilter from "../shared/CategoryFilter";
-import CJSection from "./CJSection";
+import PortfolioSection from "./PortfolioSection";
 
-function CJContainer() {
+function PortfolioContainer() {
   const [filter, setFilter] = React.useState("All");
   return (
     <>
       <div style={{ textAlign: "center" }}>
-        <h2>CJ 장학금 포트폴리오</h2>
+        <h2>Portfolio</h2>
       </div>
       <CategoryFilter
         categories={[
@@ -23,7 +23,7 @@ function CJContainer() {
         style={{ marginTop: 0 }}
       />
       {(filter === "All" || filter === "Film Music") && (
-        <CJSection
+        <PortfolioSection
           id={1}
           title="Film Music"
           youtube={{ title: `Ticket Scene from "Polar Express"`, youtubeId: "jcZGtEFA6tY" }}
@@ -38,7 +38,7 @@ function CJContainer() {
         />
       )}
       {(filter === "All" || filter === "Video Game Music") && (
-        <CJSection
+        <PortfolioSection
           id={2}
           title="Video Game Music"
           youtube={{ title: `Game Cue for "Dante's Inferno"`, youtubeId: "jids_cSE05s" }}
@@ -52,7 +52,7 @@ function CJContainer() {
         />
       )}
       {(filter === "All" || filter === "Concert Music") && (
-        <CJSection
+        <PortfolioSection
           id={3}
           title="Concert Music"
           youtube={{ title: `"Aydan's Love Letter"`, youtubeId: "rKVBFgCVyzQ" }}
@@ -66,7 +66,7 @@ function CJContainer() {
         />
       )}
       {(filter === "All" || filter === "Independent Short Film Music") && (
-        <CJSection
+        <PortfolioSection
           id={4}
           title="Independent Short Film Music"
           youtube={{ title: `Original Score for "Marked"`, youtubeId: "GP--xjSSur4" }}
@@ -80,7 +80,7 @@ function CJContainer() {
         />
       )}
       {(filter === "All" || filter === "Arrangements") && (
-        <CJSection
+        <PortfolioSection
           id={5}
           title="Arrangements"
           youtube={{
@@ -115,4 +115,4 @@ function CJContainer() {
   );
 }
 
-export default CJContainer;
+export default PortfolioContainer;

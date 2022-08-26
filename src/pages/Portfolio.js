@@ -1,15 +1,15 @@
-import CJContainer from "../components/cj/CJContainer";
+import PortfolioContainer from "../components/portfolio/PortfolioContainer";
 import Footer from "../components/shared/Footer";
 import Header from "../components/shared/Header";
 
-function CJ() {
+function Portfolio() {
   return (
     <>
       <Header />
-      <CJContainer />
+      <PortfolioContainer />
       <Footer />
     </>
   );
 }
 
-export default CJ;
+export default Portfolio;

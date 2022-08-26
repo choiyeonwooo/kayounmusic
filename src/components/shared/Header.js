@@ -33,7 +33,7 @@ function Header() {
                       <Nav.Link href="/scores">Scores</Nav.Link>
                     </li>
                     <li>
-                      <Nav.Link href="/cj">CJ 장학금 포트폴리오</Nav.Link>
+                      <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                     </li>
                     <li>
                       <Nav.Link href="/contact">Contact</Nav.Link>

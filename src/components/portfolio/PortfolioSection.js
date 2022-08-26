@@ -1,7 +1,7 @@
 import MediaItem from "../media/MediaItem";
 import ScorePost from "../scores/ScorePost";
 
-function CJSection({ id, title, youtube, score }) {
+function PortfolioSection({ id, title, youtube, score }) {
   return (
     <section className="portfolio-work" style={{ paddingBottom: 0, paddingTop: 5 }}>
       <div className="container">
@@ -36,4 +36,4 @@ function CJSection({ id, title, youtube, score }) {
   );
 }
 
-export default CJSection;
+export default PortfolioSection;
