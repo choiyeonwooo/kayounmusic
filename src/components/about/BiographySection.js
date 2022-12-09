@@ -9,19 +9,20 @@ function BiographySection() {
           <div className="biography col-md-6">
             <h2 className="pb-3">Biography</h2>
             <p>
-              Ka Youn Yoo <small>(2000-present)</small> is a composer from South Korea. She is
-              currently studying music composition at King’s College London, having graduated from
-              The Purcell School for Young Musicians in the UK. She also spent two years at The
-              Seoul Arts High School studying music composition.
+              Ka Youn Yoo <small>(2000-present)</small> is a composer from South Korea, Ka Youn’s
+              ambition is to express the sound of international music and arts through her
+              compositions. In October 2022, her composition ‘Han’ which she wrote about different
+              sorrowness that Korean women in Japanese colonial area have had, has been performed as
+              the winning piece of the LaonG Gayageum (Korean traditional zither) composition
+              competition.
             </p>
             <p>
-              Ka Youn’s ambition is to express the sound of international music and arts through her
-              compositions. In 2019, she won the Purcell School’s annual orchestral composition
-              commission for which she wrote a unique orchestral fusion ‘Taepyeong’(Peace), which
-              was performed by the Purcell School Symphony Orchestra in their annual flagship
-              concert at the Cadogan Hall. The work was inspired by Korean Taepyeong-song,
-              incorporating traditional Korean music, as well as elements of the Western Classical
-              traditions, in order to create a kaleidoscope of different musical cultures.
+              In 2019, she won the Purcell School’s annual orchestral composition commission for
+              which she wrote a unique orchestral fusion ‘Taepyeong’(Peace), which was performed by
+              the Purcell School Symphony Orchestra in their annual flagship concert at the Cadogan
+              Hall. The work was inspired by Korean Taepyeong-song, incorporating traditional Korean
+              music, as well as elements of the Western Classical traditions, in order to create a
+              kaleidoscope of different musical cultures.
             </p>
             <p>
               During her studies at university, she had opportunities to learn about various art
@@ -29,15 +30,16 @@ function BiographySection() {
               in film where music acts as a strong medium to deliver emotions to the audience. This
               experience led her to participate in an online summer program in Film Scoring Academy
               of Europe in July 2020. After that experience, she began her journey as a film
-              composer and is now working on several short film projects including Marked{" "}
+              composer and is now working on several short film projects including Marked
               <small>(2021)</small> and Outsider <small>(2021)</small> with young film directors
               across London.
             </p>
             <p>
               Ka Youn is also an orchestrator and arranger especially for young musicians. She has
-              been commissioned to orchestrate and arrange music for Antigua and Barbuda Youth
-              Orchestra since 2019 after leading Go-Compose workshop with Alison Cox in Antigua and
-              Barbuda in July 2019.
+              been commissioned to orchestrate music for Antigua and Barbuda Youth Orchestra since
+              2019 after leading Go-Compose workshop with Alison Cox in Antigua and Barbuda in July
+              2019. As an arranger, she worked with Korean Ministry of Unification for the North and
+              South collaborative concert in November 2021.
             </p>
             <a
               href="/resume/Ka_Youn_Yoo_Resume.pdf"
