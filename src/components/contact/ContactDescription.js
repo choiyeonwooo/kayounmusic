@@ -10,7 +10,7 @@ function ContactDescription() {
               <h2>Ka Youn Yoo</h2>
               <ul className="address-block">
                 <li>
-                  <i className="ion-ios-location-outline"></i>Soho, London, United Kingdom
+                  <i className="ion-ios-location-outline"></i>London, UK
                 </li>
                 <li>
                   <i className="ion-ios-email-outline"></i>Email:{" "}
