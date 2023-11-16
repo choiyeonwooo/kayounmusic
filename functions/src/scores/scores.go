@@ -29,6 +29,7 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 		}
 		jsonBody, _ = json.Marshal(scores)
 	}
+	client.Disconnect()
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
 		Headers: map[string]string{
