@@ -10,6 +10,7 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	client := db.InitMongoClient()
+	defer client.Disconnect()
 	id := request.QueryStringParameters["id"]
 	var jsonBody []byte
 	if id != "" {
@@ -29,7 +30,6 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 		}
 		jsonBody, _ = json.Marshal(scores)
 	}
-	client.Disconnect()
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
 		Headers: map[string]string{

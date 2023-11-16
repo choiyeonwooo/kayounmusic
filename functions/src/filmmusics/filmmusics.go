@@ -10,6 +10,7 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	client := db.InitMongoClient()
+	defer client.Disconnect()
 	filmMusics, err := client.GetFilmMusics()
 	if err != nil {
 		return &events.APIGatewayProxyResponse{
@@ -17,7 +18,6 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 		}, err
 	}
 	jsonBody, _ := json.Marshal(filmMusics)
-	client.Disconnect()
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
 		Headers: map[string]string{
