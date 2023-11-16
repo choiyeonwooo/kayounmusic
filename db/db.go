@@ -43,7 +43,7 @@ func InitMongoClient() MongoDbClient {
 func (client MongoDbClient) Disconnect() {
 	err := client.db.Client().Disconnect(context.TODO())
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 }
 
