@@ -1,81 +1,49 @@
 [
   {
-    "_id": {
-      "$oid": "6555474e498f7d0b02bc78c3"
-    },
-    "title": "Duet",
-    "youtubeid": "kpRxIfR2zmo",
-    "comingsoon": false,
+    "title": "Duet (Rescore)",
+    "youtubeId": "kpRxIfR2zmo",
     "category": "Film Music",
     "order": 13
   },
   {
-    "_id": {
-      "$oid": "6555476b498f7d0b02bc78c4"
-    },
     "title": "Conflict between Dystopia and Utopia",
-    "youtubeid": "x_3uv67EmVc",
-    "comingsoon": false,
+    "youtubeId": "x_3uv67EmVc",
     "category": "Concert Music",
     "order": 14
   },
   {
-    "_id": {
-      "$oid": "6555477d498f7d0b02bc78c5"
-    },
     "title": "삶",
-    "youtubeid": "uX3-UfWXKkM",
-    "comingsoon": false,
+    "youtubeId": "uX3-UfWXKkM",
     "category": "Concert Music",
     "order": 15
   },
   {
-    "_id": {
-      "$oid": "6555478e498f7d0b02bc78c6"
-    },
     "title": "Oblivion",
-    "youtubeid": "BRJBxr1eGDA",
-    "comingsoon": false,
+    "youtubeId": "BRJBxr1eGDA",
     "category": "Arrangement",
     "order": 16
   },
   {
-    "_id": {
-      "$oid": "655547ab498f7d0b02bc78c7"
-    },
     "title": "한",
-    "youtubeid": "nTrVQmz0mzE",
-    "comingsoon": false,
+    "youtubeId": "nTrVQmz0mzE",
     "category": "Concert Music",
     "order": 17
   },
   {
-    "_id": {
-      "$oid": "655547bd498f7d0b02bc78c8"
-    },
-    "title": "Red Joan",
-    "youtubeid": "q6HZJufHboA",
-    "comingsoon": false,
+    "title": "Red Joan (Rescore)",
+    "youtubeId": "q6HZJufHboA",
     "category": "Film Music",
     "order": 18
   },
   {
-    "_id": {
-      "$oid": "655547d8498f7d0b02bc78c9"
-    },
-    "title": "Lost in a Forest",
-    "youtubeid": "VpQrFKCZ87w",
-    "comingsoon": false,
+    "title": "Lost in a Forest (Rescore)",
+    "youtubeId": "VpQrFKCZ87w",
     "category": "Film Music",
     "order": 19
   },
   {
-    "_id": {
-      "$oid": "655547ef498f7d0b02bc78ca"
-    },
-    "title": "Lesson Time from 'Brave (2012)'",
-    "youtubeid": "CIZBuhvaX-I",
-    "comingsoon": false,
+    "title": "Lesson Time from \"Brave\" (Rescore)",
+    "youtubeId": "CIZBuhvaX-I",
     "category": "Film Music",
     "order": 20
   },
@@ -92,7 +60,7 @@
     "category": "Film Music"
   },
   {
-    "title": "Original Score for 'Marked' (2021)",
+    "title": "Original Score for \"Marked\" (2021)",
     "youtubeId": "s2zUfU0UJcs",
     "order": 10,
     "category": "Film Music"
@@ -110,13 +78,7 @@
     "category": "Film Music"
   },
   {
-    "title": "BBC opening titles (Rescore)",
-    "youtubeId": "A6lqQSHVRA0",
-    "order": 7,
-    "category": "Film Music"
-  },
-  {
-    "title": "Aydan's Love Letter",
+    "title": "Aydan\"s Love Letter",
     "youtubeId": "rKVBFgCVyzQ",
     "order": 6,
     "category": "Concert Music"

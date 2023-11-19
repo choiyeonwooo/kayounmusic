@@ -10,33 +10,21 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	client := db.InitMongoClient()
-	defer client.Disconnect()
-	id := request.QueryStringParameters["id"]
-	var jsonBody []byte
-	if id != "" {
-		score, err := client.GetScoreById(id)
-		if err != nil {
-			return &events.APIGatewayProxyResponse{
-				StatusCode: 500,
-			}, err
-		}
-		jsonBody, _ = json.Marshal(score)
-	} else {
-		scores, err := client.GetScores()
-		if err != nil {
-			return &events.APIGatewayProxyResponse{
-				StatusCode: 500,
-			}, err
-		}
-		jsonBody, _ = json.Marshal(scores)
+	filmMusics, err := client.GetFilmMusics()
+	if err != nil {
+		return &events.APIGatewayProxyResponse{
+			StatusCode: 500,
+		}, err
 	}
+	jsonBody, _ := json.Marshal(filmMusics)
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
 		Headers: map[string]string{
 			"Content-Type":                 "application/json",
 			"Access-Control-Allow-Origin":  "*",
 			"Access-Control-Allow-Headers": "Content-Type",
-			"Access-Control-Allow-Methods": "GET"},
+			"Access-Control-Allow-Methods": "GET",
+		},
 		Body: string(jsonBody),
 	}, nil
 }

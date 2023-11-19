@@ -10,6 +10,7 @@ function CategoryFilter({
     <div className="category-filter-wrapper" style={style}>
       {categories.map((category) => (
         <Button
+          key={category}
           size="sm"
           variant={`${filter === category ? "secondary" : "outline-secondary"}`}
           onClick={() => setFilter(category)}

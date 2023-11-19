@@ -10,7 +10,6 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	client := db.InitMongoClient()
-	defer client.Disconnect()
 	works, err := client.GetWorks()
 	if err != nil {
 		return &events.APIGatewayProxyResponse{

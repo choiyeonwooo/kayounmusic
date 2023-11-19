@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/bymi15/kayounmusic/db/models"
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -21,6 +22,11 @@ type MongoDbClient struct {
 }
 
 func InitMongoClient() MongoDbClient {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
 	uri := os.Getenv("CONNECTION_URI")
 	clientOptions := options.Client().ApplyURI(uri)
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)

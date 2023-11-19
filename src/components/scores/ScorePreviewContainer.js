@@ -3,23 +3,25 @@ import moment from "moment";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
-import { useCachedFetch } from "../../api/cachedFetchHook";
 import config from "../../config";
 import scoresData from "../../data/scores.json";
 import ComponentLoader from "../shared/ComponentLoader";
 import SoundCloudEmbed from "../works/SoundCloudEmbed";
 
 function ScorePreviewContainer({ id }) {
-  let { loading, data, error } = useCachedFetch(
-    `${config.API_ENDPOINT}/scores?id=${id}`,
-    config.CACHE_TOGGLE
-  );
+  // let { loading, data, error } = useCachedFetch(
+  //   `${config.API_ENDPOINT}/scores?id=${id}`,
+  //   config.CACHE_TOGGLE
+  // );
 
-  if (error) {
-    console.log(error);
-    console.log("Loading static data as fallback...");
+  let loading = false,
     data = _.find(scoresData, (data) => data.id === id);
-  }
+
+  // if (error) {
+  //   console.log(error);
+  //   console.log("Loading static data as fallback...");
+  //   data = _.find(scoresData, (data) => data.id === id);
+  // }
 
   const hasPreview = !_.isEmpty(data.previewFile);
   const hasFullScore = !_.isEmpty(data.fullFile);

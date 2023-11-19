@@ -2,7 +2,6 @@ import _ from "lodash";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import FlipMove from "react-flip-move";
-import { useCachedFetch } from "../../api/cachedFetchHook";
 import config from "../../config";
 import worksData from "../../data/works.json";
 import CategoryFilter from "../shared/CategoryFilter";
@@ -10,18 +9,21 @@ import ComponentLoader from "../shared/ComponentLoader";
 import SoundCloudEmbed from "./SoundCloudEmbed";
 
 function SoundCloudContainer() {
-  let { loading, data, error } = useCachedFetch(
-    `${config.API_ENDPOINT}/works`,
-    config.CACHE_TOGGLE
-  );
+  // let { loading, data, error } = useCachedFetch(
+  //   `${config.API_ENDPOINT}/works`,
+  //   config.CACHE_TOGGLE
+  // );
+
+  let loading = false,
+    data = worksData;
 
   const [filter, setFilter] = React.useState("All");
 
-  if (error) {
-    console.log(error);
-    console.log("Loading static data as fallback...");
-    data = worksData;
-  }
+  // if (error) {
+  //   console.log(error);
+  //   console.log("Loading static data as fallback...");
+  //   data = worksData;
+  // }
 
   const filteredWorks =
     filter === "All"
@@ -34,7 +36,7 @@ function SoundCloudContainer() {
         <CategoryFilter
           filter={filter}
           setFilter={setFilter}
-          categories={["All", "Orchestral", "World", "Chamber", "Solo"]}
+          categories={["All", "Orchestral", "Hybrid", "World", "Chamber", "Solo"]}
         />
         <Row>
           <FlipMove typeName={null}>

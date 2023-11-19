@@ -2,7 +2,6 @@ import _ from "lodash";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import FlipMove from "react-flip-move";
-import { useCachedFetch } from "../../api/cachedFetchHook";
 import config from "../../config";
 import scoresData from "../../data/scores.json";
 import CategoryFilter from "../shared/CategoryFilter";
@@ -10,18 +9,21 @@ import ComponentLoader from "../shared/ComponentLoader";
 import ScorePost from "./ScorePost";
 
 function ScoresContainer() {
-  let { loading, data, error } = useCachedFetch(
-    `${config.API_ENDPOINT}/scores`,
-    config.CACHE_TOGGLE
-  );
+  // let { loading, data, error } = useCachedFetch(
+  //   `${config.API_ENDPOINT}/scores`,
+  //   config.CACHE_TOGGLE
+  // );
+
+  let loading = false,
+    data = scoresData;
 
   const [filter, setFilter] = React.useState("All");
 
-  if (error) {
-    console.log(error);
-    console.log("Loading static data as fallback...");
-    data = scoresData;
-  }
+  // if (error) {
+  //   console.log(error);
+  //   console.log("Loading static data as fallback...");
+  //   data = scoresData;
+  // }
 
   const filteredScores = () =>
     filter === "All"

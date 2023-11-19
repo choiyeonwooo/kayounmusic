@@ -1,6 +1,5 @@
 import _ from "lodash";
 import React from "react";
-import { useCachedFetch } from "../../api/cachedFetchHook";
 import config from "../../config";
 import mediaData from "../../data/media.json";
 import CategoryFilter from "../shared/CategoryFilter";
@@ -9,16 +8,19 @@ import MediaItem from "./MediaItem";
 
 function MediaContainer() {
   const [filter, setFilter] = React.useState("All");
-  let { loading, data, error } = useCachedFetch(
-    `${config.API_ENDPOINT}/filmmusics`,
-    config.CACHE_TOGGLE
-  );
+  // let { loading, data, error } = useCachedFetch(
+  //   `${config.API_ENDPOINT}/filmmusics`,
+  //   config.CACHE_TOGGLE
+  // );
 
-  if (!error) {
-    console.log(error);
-    console.log("Loading static data as fallback...");
+  let loading = false,
     data = mediaData;
-  }
+
+  // if (!error) {
+  //   console.log(error);
+  //   console.log("Loading static data as fallback...");
+  //   data = mediaData;
+  // }
 
   const filteredMedia =
     filter === "All"
