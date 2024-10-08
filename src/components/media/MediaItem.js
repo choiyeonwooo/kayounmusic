@@ -29,7 +29,7 @@ function MediaItem({ title, youtubeId, img, comingSoon, playlistIDs }) {
           className="popup-youtube"
           href={
             playlistIDs
-              ? `https://www.youtube.com/v/${youtubeId}?version=3&loop=1&playlist=${playlistIDs},`
+              ? `https://www.youtube.com/watch?v=${youtubeId}&list=${playlistIDs}&index=1`
               : `https://www.youtube.com/watch?v=${youtubeId}`
           }
           savefrom_lm_index="0"

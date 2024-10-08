@@ -47,6 +47,7 @@ function MediaContainer() {
                     youtubeId={d.youtubeId}
                     img={d.img}
                     comingSoon={d.comingSoon}
+                    playlistIDs={d.playlistId}
                   />
                 </div>
               ))
